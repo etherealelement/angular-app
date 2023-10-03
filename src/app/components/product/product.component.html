@@ -1,0 +1,14 @@
+<ul class="product-list">
+    <li class="product-list__item">
+        <img [src]="product">
+        <p class="product-list__item--title">Имя: {{product.title}}</p>
+        <p class="product-list__item--description"
+        *ngIf="details"
+        >Описание: {{product.description}}</p>
+        <p class="product-list__item--rating">Рейтинг: {{product.rating.rate}}</p>
+        <p 
+        class="product-list__item--rating">Колличество: {{product.rating.count | currency}}</p>
+        
+        <button (click)="details = !details">{{ details ? "Hide" : "Show" }} Details</button>
+    </li>
+</ul>
