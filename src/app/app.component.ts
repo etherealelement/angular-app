@@ -12,13 +12,14 @@ import { ModalService } from './services/modal.service';
 export class AppComponent implements OnInit {
   title = 'my-app';
 
-  // products: IProduct[] = [];
+  products: IProduct[] = [];
   loading: boolean;
   products$: Observable<IProduct[]>;
   term = '';
   productsService: any;
   productService: any;
   ProductsService: any;
+  ModalService: any;
 
   constructor(
     public ProductService: ProductsService,
@@ -30,8 +31,6 @@ export class AppComponent implements OnInit {
     // this.products$ = this.ProductService.getAll().pipe(
     //   tap(() => (this.loading = false))
     // );
-    this.ProductService.getAll().subscribe(() => {
-      this.loading = false;
-    });
+    this.ProductService.getAll().subscribe(() => {});
   }
 }

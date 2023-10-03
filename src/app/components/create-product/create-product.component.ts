@@ -32,7 +32,7 @@ export class CreateProductComponent implements OnInit {
       .create({
         title: this.form.value.title as string,
         price: 25.3,
-        description: 'fdsfsd',
+        description: 'any',
         image: 'https://i.pravatar.cc',
         category: 'electronic',
         rating: {

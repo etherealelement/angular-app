@@ -12,6 +12,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FocusDirective } from './directives/focus.directive';
+import { ModalService } from './services/modal.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,7 @@ import { FocusDirective } from './directives/focus.directive';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [ModalService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

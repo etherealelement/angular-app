@@ -12,22 +12,17 @@ export class ProductsService {
   products: IProduct[] = [];
 
   getAll(): Observable<IProduct[]> {
-    return this.http
-      .get<IProduct[]>('https://fakestoreapi.com/products', {
-        params: new HttpParams({
-          fromObject: { limit: 10 },
-        }),
-      })
-      .pipe(
-        delay(2000),
-        retry(2),
-        tap((products) => (this.products = products))
-      );
+    return this.http.get<IProduct[]>('https://fakestoreapi.com/products', {
+      params: new HttpParams({
+        fromObject: { limit: 10 },
+      }),
+    });
   }
 
   create(product: IProduct): Observable<IProduct> {
-    return this.http
-      .post<IProduct>('https://fakestoreapi.com/products', product)
-      .pipe(tap((prod) => this.products.push(prod)));
+    return this.http.post<IProduct>(
+      'https://fakestoreapi.com/products',
+      product
+    );
   }
 }
