@@ -24,16 +24,31 @@
 </style>
 
 <!-- Toolbar -->
-<div class="max-w-2xl container mx-auto pt-5" role="banner">
-   <app-product-heading></app-product-heading>
+<div class="app-container" role="banner">
+  <app-product-heading></app-product-heading>
+  <label class="search-container">
+    <span>Поиск: </span>
+    <input type="text" 
+    placeholder="Введите название товара..." 
+    class="search"
+    [(ngModel)]="term"
+    
+    />
+  </label>
 
-   <app-product
-   [product] = "products[0]"
-    *ngFor="let product of products " 
-  [product]="product"
+<div *ngIf="products$ | async as products">
+  <app-product
+  *ngFor="let product of products | filterProducts: term; let i = index;" 
+[product]="product"
 ></app-product>
+</div>
 
-<p *ngIf="loading">Loading...</p>
+<p *ngIf="loading" class="loading">Loading...</p>
+
+
+<app-modal title="Create new Product">
+  <app-create-product></app-create-product>
+</app-modal>
 
 </div>
 
