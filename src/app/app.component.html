@@ -46,7 +46,7 @@
 <p *ngIf="loading" class="loading">Loading...</p>
 
 
-<app-modal title="Create new Product">
+<app-modal *ngIf="modalService.isVisible$ | async" title="Create new Product">
   <app-create-product></app-create-product>
 </app-modal>
 
