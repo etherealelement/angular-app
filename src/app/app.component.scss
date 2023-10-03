@@ -22,3 +22,18 @@
 .loading {
     margin-top: 50px;
 }
+
+.container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.create__btn { 
+    margin-top: 20px;
+    border: none;
+    padding: 10px;
+    background: yellow;
+    cursor: pointer;
+}

@@ -1,7 +1,6 @@
 import { Call } from '@angular/compiler';
 import { Component, Input } from '@angular/core';
-import { IProduct } from 'src/app/data/products.interface';
-
+import { IProduct } from 'src/app/models/products.interface';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',

@@ -1,3 +1,3 @@
-import { IProduct } from './products.interface';
+import { IProduct } from '../models/products.interface';
 
 export const products: IProduct[] = [];

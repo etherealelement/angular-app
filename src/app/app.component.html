@@ -36,9 +36,10 @@
     />
   </label>
 
-<div *ngIf="products$ | async as products">
+<div *ngIf="ProductService.products" class="container">
+  <button (click)="modalService.open" class="create__btn">Create product</button>
   <app-product
-  *ngFor="let product of products | filterProducts: term; let i = index;" 
+  *ngFor="let product of ProductService.products | filterProducts: term; let i = index;" 
 [product]="product"
 ></app-product>
 </div>
@@ -49,7 +50,6 @@
 <app-modal *ngIf="modalService.isVisible$ | async" title="Create new Product">
   <app-create-product></app-create-product>
 </app-modal>
-
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
